@@ -1,1 +1,1 @@
-Barebone code required for FH could to work
+Barebones code required for FH could to work

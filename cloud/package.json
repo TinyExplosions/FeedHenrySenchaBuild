@@ -1,9 +1,9 @@
 {
-  "name": "fh-app",
-  "version": "0.0.1",
-  "dependencies" : {
-      "fh-webapp": "*",
-      "fh-api": "*",
-      "express": "*"
-  }
+    "name": "fh-app",
+    "version": "0.0.1",
+    "dependencies" : {
+        "fh-webapp": "*",
+        "fh-api": "*",
+        "express": "*"
+    }
 }

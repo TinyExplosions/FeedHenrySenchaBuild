@@ -16,13 +16,13 @@ module.exports = function(grunt) {
         exec: {
             build: {
                 command: 'cd client/development && sencha app build <%= grunt.config.get("environment")%>',
-                stdout: true
+            stdout: true
             },
-			generateApp: {
-				command: 'cd <%= SENCHA_SDK %> && sencha generate app <%=APP_NAME%> '+process.cwd()+'/client/development',
-				stdout: true
-			}
-		}
+            generateApp: {
+                command: 'cd <%= SENCHA_SDK %> && sencha generate app <%=APP_NAME%> '+process.cwd()+'/client/development',
+                stdout: true
+            }
+        }
     });
 
     //load our tasks;

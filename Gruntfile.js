@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-exec');
 
     // Parse optional flags for Sencha Environment and FH Package desination
-    var environment = (typeof grunt.option('environment') !== 'undefined') ? grunt.option('target').toLowerCase() : 'testing';
+    var environment = (typeof grunt.option('environment') !== 'undefined') ? grunt.option('environment').toLowerCase() : 'testing';
     var clientPackage = (typeof grunt.option('package') !== 'undefined') ? grunt.option('package').toLowerCase() : 'default';
 
     // grunt build will auto run the 'testing' environment and put it in the 'default' package

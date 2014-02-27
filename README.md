@@ -40,11 +40,8 @@ $ grunt generate
 To build the app:
 
 ```
-$ grunt build
+    $ grunt build <--environment=[testing,package,production,native]> <--package=<default>>
 ```
 
-*This will build the app using sencha cmd with the environment option of* **testing** *to run a* **production** *build:*
 
-```
-$ grunt build --target=production
-```
+*The defaults for environment and package are* **testing** *and* **default** *respectively*

@@ -1,13 +1,14 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        SENCHA_SDK: '~/touch-2.3.1',
-        APP_NAME: 'fhsencha',
+        meta: {
+            senchasdk: '~/touch-2.3.1'
+        },
         copy: {
             builtPackage: {
                 files: [{
                     expand: true,
-                    cwd: 'client/development/build/<%= grunt.config.get("environment")%>/<%=APP_NAME%>',
+                    cwd: 'client/development/build/<%= grunt.config.get("environment")%>/<%= pkg.name %>',
                     src: ['**'],
                     dest: 'client/<%= grunt.config.get("clientPackage")%>'
                 }]
@@ -19,15 +20,14 @@ module.exports = function(grunt) {
             stdout: true
             },
             generateApp: {
-                command: 'cd <%= SENCHA_SDK %> && sencha generate app <%=APP_NAME%> '+process.cwd()+'/client/development',
+                command: 'cd <%= meta.senchasdk %> && sencha generate app <%= pkg.name %> '+process.cwd()+'/client/development',
                 stdout: true
             }
         }
     });
 
     //load our tasks;
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-exec');
+    require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
     // Parse optional flags for Sencha Environment and FH Package desination
     var environment = (typeof grunt.option('environment') !== 'undefined') ? grunt.option('environment').toLowerCase() : 'testing';
